@@ -1,6 +1,8 @@
 import { Search } from "lucide-react";
 import { useSearch } from "../../context/SearchContext";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Logo from "../../../public/pictures/logo.png"; // Adjust the path as necessary
 
 export const Header = () => {
   const { searchInput, setSearchInput, setCity } = useSearch();
@@ -19,7 +21,13 @@ export const Header = () => {
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold text-white mb-6 drop-shadow-lg">
-          Wetter App
+          <Image
+            src={Logo}
+            alt="Wetter Logo"
+            width={150}
+            height={50}
+            className="inline-block mb-2"
+          />
         </h1>
 
         <div className="max-w-md mx-auto">
