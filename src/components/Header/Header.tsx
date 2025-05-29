@@ -11,10 +11,11 @@ export const Header = () => {
   const handleSearch = (e: React.KeyboardEvent | React.MouseEvent) => {
     e.preventDefault();
     if (searchInput.trim() === "") return;
-    const formattedCity = searchInput.trim().replace(/\s+/g, "-").toLowerCase();
-    setCity(formattedCity);
+    const cityWithSpaces = searchInput.trim();
+    setCity(cityWithSpaces);
     setSearchInput("");
-    router.push(`/${formattedCity.replace(/\s+/g, "-").toLowerCase()}`);
+    const cityForUrl = cityWithSpaces.toLowerCase().replace(/\s+/g, "-");
+    router.push(`/${cityForUrl}`);
   };
 
   return (
