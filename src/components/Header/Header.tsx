@@ -2,7 +2,7 @@ import { Search } from "lucide-react";
 import { useSearch } from "../../context/SearchContext";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Logo from "../../../public/pictures/logo.png"; // Adjust the path as necessary
+import Logo from "../../../public/pictures/logo.png";
 
 export const Header = () => {
   const { searchInput, setSearchInput, setCity } = useSearch();
