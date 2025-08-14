@@ -125,7 +125,12 @@ export const FiveDaysForcast = () => {
               {typeof window !== "undefined"
                 ? new Date(day.date).toLocaleDateString("de-DE", {
                     weekday: "short",
-                  })
+                  }) ===
+                  new Date().toLocaleDateString("de-DE", { weekday: "short" })
+                  ? "Heute"
+                  : new Date(day.date).toLocaleDateString("de-DE", {
+                      weekday: "short",
+                    })
                 : day.date}
             </div>
 
